@@ -46,7 +46,7 @@ jobs:
   sonar-scan:
     runs-on: ubuntu-latest
     needs: build-and-test
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -78,8 +78,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=shaik-byte_Angular-CICD-Pipeline \
-            -Dsonar.organization=shaik-byte \
+            -Dsonar.projectKey=yugandhar12345_Angular-CICD-Pipeline \
+            -Dsonar.organization=yugandhar12345 \
             -Dsonar.sources=src \
             -Dsonar.tests=src \
             -Dsonar.test.inclusions=**/*.spec.ts \
@@ -87,3 +87,4 @@ jobs:
             -Dsonar.javascript.lcov.reportPaths=coverage/my-angular-project/lcov.info \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
+            
